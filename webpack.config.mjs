@@ -117,7 +117,7 @@ const config = (env, argv) => {
             static: path.join(__dirname, 'public'),
             historyApiFallback: true,
             compress: true,
-            port: 3001,
+            port: 3000,
             hot: true,
             open: true,
             liveReload:true,// Ensures files auto-reload

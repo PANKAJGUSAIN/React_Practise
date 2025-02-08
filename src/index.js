@@ -12,14 +12,25 @@ root.render(
     </StrictMode>
 );
 
+
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/ZyloDrive/service-worker.js')
-            .then((registration) => {
-                console.log('Service Worker registered:', registration);
-            })
-            .catch((error) => {
-                console.error('Service Worker registration failed:', error);
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Unregister any existing service workers on localhost
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+            registrations.forEach((registration) => {
+                registration.unregister();
             });
-    });
+        });
+        console.log('Service Worker not registered on localhost');
+    } else {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered:', registration);
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        });
+    }
 }
