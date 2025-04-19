@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import './index.css';
 
 
@@ -22,8 +22,29 @@ const reducer = (state, action) => {
 
 const Counter = () => {
 
+    const testref = useRef(null);
+    const timer  = useRef(null);
     const [state, dispatch] = useReducer(reducer, count);
 
+    useEffect(() => {
+        
+        let count = 0;
+        if (testref.current) {
+            timer.current = setInterval(() => {
+                count += 1
+
+                testref.current.textContent = count;
+            }, 100)
+        }
+
+        return () => {
+            clearInterval(timer.current)
+        }
+    }, [])
+
+    const closetime = ()=>{
+        clearInterval(timer.current);
+    }
     const handlekeyDown = (e)=>{
         // isTrusted 
         console.log(e.key);
@@ -34,6 +55,7 @@ const Counter = () => {
 
     return (
         <div className="counter">
+            <div ref={testref}>0</div><button onClick={closetime}>Close</button>
             <div className="counter_value">
                 <span>Counter : {state}</span>
             </div>
