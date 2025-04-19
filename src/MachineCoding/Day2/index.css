@@ -1,0 +1,25 @@
+.todoWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffe4c4;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.todoButtonWrapper input{
+    height: 40px;
+    padding: 10px;
+    font-size: medium;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.todoButtonWrapper button{
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+
+}
