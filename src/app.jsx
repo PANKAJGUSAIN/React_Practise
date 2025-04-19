@@ -1,22 +1,18 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
+import './index.css';
 
-const Day1 = lazy(() => import('./Day1/Day1'));
-const Day2 = lazy(() => import('./Day2/Day2'));
+const MachineDay1 = lazy(()=> import('./MachineCoding/Day1/index'));
 
 const App = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <div>
+            <div className='Navbar'>
                 <nav>
-                    <ul>
-                        <li><Link to="/day1">Day 1</Link></li>
-                        <li><Link to="/day2">Day 2</Link></li>
-                    </ul>
+                    <Link to="/MachineCode1">Machine Code 1</Link>
                 </nav>
                 <Routes>
-                    <Route path="/day1" element={<Day1 />} />
-                    <Route path="/day2" element={<Day2 />} />
+                    <Route path="/MachineCode1" element={<MachineDay1/>}/>
                 </Routes>
             </div>
         </Suspense>
