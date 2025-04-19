@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+html , body{
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
 .Navbar{
-    padding: 10px 15px;
+    padding: 10px 10px;
+}
+
+.Navbar a{
+    line-height: 1.5;
+    padding: 10px 16px;
+    display: inline-block;
+    border: 2px solid grey;
+    background-color: ghostwhite;
+    border-radius: 8px;
+    margin-right: 10px;
+    text-decoration: none;
 }
