@@ -1,0 +1,22 @@
+.ShoppingCartWrapper{
+    display: flex;
+    gap: 10px;
+}
+
+.ShoppingItemsWrapper{
+    height: 200px;
+    width: 60%;
+    overflow: auto;
+    border: 2px solid saddlebrown;
+}
+
+.ShoppingCart{
+    height: 200px;
+    width: 30%;
+    border: 2px solid saddlebrown;
+}
+
+.ShoppingItem{
+    display: flex;
+    gap: 10px;
+}
