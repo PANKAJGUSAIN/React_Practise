@@ -38,9 +38,11 @@ const DragAndDrop = () =>{
 
     const handleDragEnd = (e , id)=>{
         if(!dragEnd){
+            console.log('Dropped outside the valid area');
+        }
+            setDragEnd(false);
             setDraggedIndex(null);
             setDrageedOver(null);
-        }
     }
 
 
