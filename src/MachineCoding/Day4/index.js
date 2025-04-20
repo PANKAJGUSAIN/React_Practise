@@ -51,7 +51,7 @@ const DragAndDrop = () =>{
         <div style={{height:"90%" , width:"100%"}}>
             Drag And Drop
 
-            <div className='DroppingArea'>
+            <div className='DroppingArea' onDragOver={()=>{console.log('left side over')}} onDrop={()=>{console.log("left side drop")}}>
                 {
                     items.map((item , id) =>(
                         <div key={id} 
@@ -70,6 +70,10 @@ const DragAndDrop = () =>{
                         </div>
                     ))
                 }
+                
+            </div>
+
+            <div className='DroppingArea' onDragOver={()=>{console.log('Right side over')}} onDrop={()=>{console.log("Right side drop")}}>
                 
             </div>
 
