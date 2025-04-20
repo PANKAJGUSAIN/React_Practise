@@ -1,8 +1,8 @@
-import { useEffect, useReducer, useState } from "react"
+import { useCallback, useEffect, useReducer, useState } from "react"
 import './index.css';
 
 const initialState = {
-    cart: []
+    cart: [] , 
 }
 
 const reducer = (state, action) => {
