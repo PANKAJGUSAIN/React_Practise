@@ -1,0 +1,16 @@
+.DroppingArea{
+    height: auto;
+    background-color: beige;
+    border: 1px dashed saddlebrown ;
+    padding: 10px;
+}
+.DragItem{
+    height: 40px;
+    width: 100%;
+    border: 1px solid red;
+    margin-bottom: 10px;
+    background-color: brown;
+    text-align: center;
+    padding-top: 10px;
+    cursor: move;
+}
